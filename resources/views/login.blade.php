@@ -69,7 +69,14 @@
     <body>
         <nav>
             <a href="/">Home</a>
-            <a href="/login">Log In</a>
+            @guest
+                <a href="/register">Register</a>
+                <a href="/login">Log In</a>
+            @endguest
+            @auth
+                <a href="/login">Log Out</a>
+
+            @endauth
         </nav>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -99,7 +106,7 @@
                             id="name"
                             name="name"
                             type="text"
-                            placeholder="What is your name?">
+                            placeholder="Enter your first name">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password</label>
@@ -107,7 +114,7 @@
                             class="form-control"
                             id="pwd"
                             name="pwd"
-                            type="text" placeholder="This will not be hashed.">
+                            type="text" placeholder="Enter your email">
                     </div>
                     <div class="form-group">
                         <button class="form-control btn-primary">Sign Up</button>

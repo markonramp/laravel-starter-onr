@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\RegisterController;
+use Illuminate\Support\Facades\Route;
+use App\Models\User;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,8 +17,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 
 Route::get('/login', function () {
     return view('login');

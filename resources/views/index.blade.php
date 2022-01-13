@@ -30,11 +30,30 @@
         </style>
     </head>
     <body>
+        <nav>
+            <a href="/">Home</a>
+            @guest
+                <a href="/register">Register</a>
+                <a href="/login">Log In</a>
+            @endguest
+            @auth
+                <a href="/">Log Out</a>
+            @endauth
+        </nav>
         <div id="app">
             <div class="content">
                 <div class="title m-b-md">
-                    Live Reload:
-                    <example-component />
+                    <h2>Hello</h2>
+                    @if (session()->has('success'))
+                    <div >
+                        <p
+                        class="form-control"
+                        style="color: white; text-align:left; background: green"
+                        >
+                            {{session()->get('success')}}
+                        </p>
+                    </div>
+                @endif
                 </div>
             </div>
         </div>
