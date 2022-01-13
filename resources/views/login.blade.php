@@ -88,9 +88,9 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Sign Up
+                    Log In
                 </div>
-                <form action="/" method="GET" class="form">
+                <form action="/login" method="GET" class="form">
                     @csrf
                     <div class="form-group">
                         <label  for="name">Name</label>
@@ -100,15 +100,6 @@
                             name="name"
                             type="text"
                             placeholder="What is your name?">
-                    </div>
-                    <div class="form-group">
-                        <label createfor="email">Email</label>
-                        <input
-                            class="form-control"
-                            id="email"
-                            name="email"
-                            type="text"
-                            placeholder="We will send you spam.">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password</label>
@@ -121,7 +112,6 @@
                     <div class="form-group">
                         <button class="form-control btn-primary">Sign Up</button>
                     </div>
-
                 </form>
             </div>
         </div>
